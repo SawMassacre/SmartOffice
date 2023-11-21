@@ -1,0 +1,163 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "MTSCompact-Bold", sans-serif;
+  font-weight: normal;
+  color: #000;
+}
+
+p {
+  font-family: "MTSCompact-Regular", sans-serif;
+  font-weight: normal;
+  color: #333;
+}
+
+@font-face {
+  font-family: "MTSCompact-Black";
+  src: url("../assets/fonts/MTSCompact-Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTSCompact-Bold";
+  src: url("../assets/fonts/MTSCompact-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTSCompact-Medium";
+  src: url("../assets/fonts/MTSCompact-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTSCompact-Regular";
+  src: url("../assets/fonts/MTSCompact-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTSExtended-Black";
+  src: url("../assets/fonts/MTSExtended-Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTSExtended-Bold";
+  src: url("../assets/fonts/MTSExtended-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTSExtended-Medium";
+  src: url("../assets/fonts/MTSExtended-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTSExtended-Regular";
+  src: url("../assets/fonts/MTSExtended-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTSText-black";
+  src: url("../assets/fonts/MTSText-Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTSText-bold";
+  src: url("../assets/fonts/MTSText-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTSText-medium";
+  src: url("../assets/fonts/MTSText-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTSText-regular";
+  src: url("../assets/fonts/MTSText-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTSUltraExtended-Black";
+  src: url("../assets/fonts/MTSUltraExtended-Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTSUltraExtended-Bold";
+  src: url("../assets/fonts/MTSUltraExtended-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTSUltraExtended-Light";
+  src: url("../assets/fonts/MTSUltraExtended-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTSUltraExtended-Regular";
+  src: url("../assets/fonts/MTSUltraExtended-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTSWide-Black";
+  src: url("../assets/fonts/MTSWide-Black.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTSWide-Bold";
+  src: url("../assets/fonts/MTSWide-Bold.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTSWide-Light";
+  src: url("../assets/fonts/MTSWide-Light.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTSWide-Medium";
+  src: url("../assets/fonts/MTSWide-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "MTSWide-Regular";
+  src: url("../assets/fonts/MTSWide-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
