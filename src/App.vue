@@ -1,63 +1,43 @@
 <template>
-  <n-theme-editor>
-    <n-config-provider
-      :theme="theme"
-      :theme-overrides="
-        theme === null ? lightThemeOverrides : darkThemeOverrides
-      "
-    >
-      <div>
-        <div v-if="!isLoaded" class="loading">
-          <p class="loading-text">{{ loadingText }}</p>
-          <n-button>Primary</n-button>
-          <n-switch v-model:value="isDark" />
-
-          <n-avatar
-            size="small"
-            src="https://07akioni.oss-cn-beijing.aliyuncs.com/07akioni.jpeg"
-          />
-          <n-card title="Card"> Card Content </n-card>
-        </div>
-
-        <div v-else>
-          <h1>МТС</h1>
-          <h2>МТС</h2>
-          <h3>МТС</h3>
-          <h4>МТС</h4>
-          <h5>МТС</h5>
-          <h6>МТС</h6>
-          <p>МТС</p>
-        </div>
+  <n-config-provider
+    :theme="theme"
+    :theme-overrides="
+      theme === 'dark' ? darkThemeOverrides : lightThemeOverrides
+    "
+  >
+    <div>
+      <div v-if="!isLoaded" class="loading">
+        <p class="loading-text">{{ loadingText }}</p>
+        <n-button type="primary">Primary</n-button>
+        <n-button type="info">Primary</n-button>
+        <n-button type="success">Primary</n-button>
+        <n-button type="warning">Primary</n-button>
+        <n-button type="error">Primary</n-button>
+        <n-switch v-model:value="isDark" />
       </div>
-    </n-config-provider>
-  </n-theme-editor>
+
+      <div v-else>
+        <h1>МТС</h1>
+        <h2>МТС</h2>
+        <h3>МТС</h3>
+        <h4>МТС</h4>
+        <h5>МТС</h5>
+        <h6>МТС</h6>
+        <p>МТС</p>
+      </div>
+    </div>
+  </n-config-provider>
 </template>
 
 <script>
 import { ref, onMounted, computed } from "vue";
-import { NConfigProvider, darkTheme, lightTheme, NThemeEditor } from "naive-ui";
+import { NConfigProvider } from "naive-ui";
 import "./styles/reset.css";
 import "./styles/style.css";
-
-const darkThemeOverrides = {
-  common: {
-    primaryColor: "#000000",
-    infoColor: "#ff0032",
-  },
-};
-
-const lightThemeOverrides = {
-  common: {
-    primaryColor: "#ff0032",
-    infoColor: "#ff0032",
-    textColor1: "#ffffff",
-  },
-};
 
 export default {
   components: {
     NConfigProvider,
-    NThemeEditor,
   },
   setup() {
     const isLoaded = ref(false);
@@ -66,7 +46,7 @@ export default {
     let increasing = true;
 
     const isDark = ref(true);
-    const theme = computed(() => (isDark.value ? darkTheme : lightTheme));
+    const theme = computed(() => (isDark.value ? "dark" : "light"));
 
     onMounted(() => {
       const interval = setInterval(() => {
@@ -96,12 +76,26 @@ export default {
       isLoaded,
       loadingText,
       isDark,
-      darkTheme,
-      lightTheme,
-      theme,
       darkThemeOverrides,
       lightThemeOverrides,
+      theme,
     };
+  },
+};
+
+/**
+ * @type import('naive-ui').GlobalThemeOverrides
+ */
+
+const lightThemeOverrides = {
+  common: {
+    primaryColor: "#000000",
+  },
+};
+
+const darkThemeOverrides = {
+  common: {
+    primaryColor: "#ffffff",
   },
 };
 </script>
