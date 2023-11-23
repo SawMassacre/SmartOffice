@@ -33,16 +33,57 @@
         </kinesis-container>
         <n-divider style="width: 30vw" />
       </div>
-      <div v-else>
+      <div v-else style="display: flex; width: 100vw; justify-content: center">
         <NavBar></NavBar>
-        <n-switch v-model:value="isDark" size="large">
-          <template #checked-icon>
-            <n-icon :component="WbSunnyOutlined" />
-          </template>
-          <template #unchecked-icon>
-            <n-icon :component="ModeNightOutlined" />
-          </template>
-        </n-switch>
+        <kinesis-container
+          style="display: flex; bottom: 10px; position: absolute"
+        >
+          <kinesis-element type="depth_inv" :strength="10">
+            <n-switch
+              v-model:value="isDark"
+              size="large"
+              style="margin-right: 10px"
+            >
+              <template #checked-icon>
+                <n-icon :component="WbSunnyOutlined" />
+              </template>
+              <template #unchecked-icon>
+                <n-icon :component="ModeNightOutlined" />
+              </template>
+            </n-switch>
+          </kinesis-element>
+          <kinesis-element type="depth_inv" :strength="10">
+            <n-button
+              round
+              type="primary"
+              size="small"
+              style="margin-right: 10px"
+              ><template #icon>
+                <n-icon><av-timer-outlined /></n-icon>
+              </template>
+              Помодоро
+            </n-button>
+          </kinesis-element>
+          <kinesis-element type="depth_inv" :strength="10">
+            <n-button
+              round
+              type="primary"
+              size="small"
+              style="margin-right: 10px"
+              ><template #icon>
+                <n-icon><tag-faces-outlined /></n-icon>
+              </template>
+              Получить совет
+            </n-button>
+          </kinesis-element>
+          <kinesis-element type="depth_inv" :strength="10">
+            <n-button round type="primary" size="small"
+              ><template #icon>
+                <n-icon><emergency-outlined /></n-icon>
+              </template>
+            </n-button>
+          </kinesis-element>
+        </kinesis-container>
         <router-view />
       </div>
       <n-global-style />
@@ -53,7 +94,13 @@
 <script>
 import { ref, computed, onMounted } from "vue";
 import { NConfigProvider, NGlobalStyle } from "naive-ui";
-import { ModeNightOutlined, WbSunnyOutlined } from "@vicons/material";
+import {
+  ModeNightOutlined,
+  WbSunnyOutlined,
+  AvTimerOutlined as AvTimerOutlined,
+  TagFacesOutlined as TagFacesOutlined,
+  EmergencyOutlined as EmergencyOutlined,
+} from "@vicons/material";
 import { KinesisContainer, KinesisElement } from "vue-kinesis";
 import NavBar from "./components/NavBar.vue";
 
@@ -63,6 +110,9 @@ export default {
     NConfigProvider,
     NGlobalStyle,
     KinesisContainer,
+    AvTimerOutlined,
+    TagFacesOutlined,
+    EmergencyOutlined,
     KinesisElement,
     NavBar,
   },
@@ -74,7 +124,7 @@ export default {
     onMounted(() => {
       setTimeout(() => {
         isLoading.value = false;
-      }, 3000);
+      }, 200);
     });
 
     /**
@@ -116,12 +166,6 @@ export default {
         bodyColor: "#fff",
         dividerColor: "#a8040c",
       },
-      Typography: {
-        headerFontSize1: "32px",
-        headerFontSize2: "24px",
-        headerFontSize3: "20px",
-        pFontSize: "17px",
-      },
     };
 
     const darkThemeOverrides = {
@@ -158,12 +202,6 @@ export default {
         fontFamilyMono: "MTSCompact-Regular",
         bodyColor: "#000",
         dividerColor: "#fff",
-      },
-      Typography: {
-        headerFontSize1: "32px",
-        headerFontSize2: "24px",
-        headerFontSize3: "20px",
-        pFontSize: "17px",
       },
     };
 

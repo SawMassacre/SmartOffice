@@ -1,6 +1,6 @@
 <template>
   <kinesis-container>
-    <kinesis-element type="depth_inv" :strength="8">
+    <kinesis-element type="depth_inv" :strength="6">
       <n-menu
         v-model:value="activeKey"
         mode="horizontal"
