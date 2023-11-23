@@ -16,6 +16,7 @@ import {
   NH6,
   NP,
   NIcon,
+  NDivider,
 } from "naive-ui";
 
 import App from "./App.vue";
@@ -24,6 +25,7 @@ import ThemeCreatingPage from "./views/ThemeCreatingPage.vue";
 
 import "./styles/reset.css";
 import "./styles/fonts.css";
+import "animate.css";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -57,6 +59,7 @@ const naive = create({
     NH6,
     NP,
     NIcon,
+    NDivider,
   ],
 });
 
