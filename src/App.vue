@@ -114,6 +114,12 @@ export default {
         bodyColor: "#fff",
         dividerColor: "#a8040c",
       },
+      Typography: {
+        headerFontSize1: "32px",
+        headerFontSize2: "24px",
+        headerFontSize3: "20px",
+        pFontSize: "17px",
+      },
     };
 
     const darkThemeOverrides = {
@@ -150,6 +156,12 @@ export default {
         fontFamilyMono: "MTSCompact-Regular",
         bodyColor: "#000",
         dividerColor: "#fff",
+      },
+      Typography: {
+        headerFontSize1: "32px",
+        headerFontSize2: "24px",
+        headerFontSize3: "20px",
+        pFontSize: "17px",
       },
     };
 
