@@ -34,6 +34,7 @@
         <n-divider style="width: 30vw" />
       </div>
       <div v-else>
+        <NavBar></NavBar>
         <n-switch v-model:value="isDark" size="large">
           <template #checked-icon>
             <n-icon :component="WbSunnyOutlined" />
@@ -42,7 +43,6 @@
             <n-icon :component="ModeNightOutlined" />
           </template>
         </n-switch>
-        <n-global-style />
         <router-view />
       </div>
       <n-global-style />
@@ -55,6 +55,7 @@ import { ref, computed, onMounted } from "vue";
 import { NConfigProvider, NGlobalStyle } from "naive-ui";
 import { ModeNightOutlined, WbSunnyOutlined } from "@vicons/material";
 import { KinesisContainer, KinesisElement } from "vue-kinesis";
+import NavBar from "./components/NavBar.vue";
 
 export default {
   name: "App",
@@ -63,6 +64,7 @@ export default {
     NGlobalStyle,
     KinesisContainer,
     KinesisElement,
+    NavBar,
   },
   setup() {
     const isDark = ref(true);
@@ -72,7 +74,7 @@ export default {
     onMounted(() => {
       setTimeout(() => {
         isLoading.value = false;
-      }, 5000);
+      }, 3000);
     });
 
     /**
@@ -178,6 +180,6 @@ export default {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  height: 25vh;
+  height: 10rem;
 }
 </style>
