@@ -7,11 +7,23 @@ import {
   lightTheme,
   NSwitch,
   NConfigProvider,
+  NThemeEditor,
+  NH1,
+  NH2,
+  NH3,
+  NH4,
+  NH5,
+  NH6,
+  NP,
+  NIcon,
 } from "naive-ui";
 
 import App from "./App.vue";
 import HomePage from "./views/HomePage.vue";
 import ThemeCreatingPage from "./views/ThemeCreatingPage.vue";
+
+import "./styles/reset.css";
+import "./styles/fonts.css";
 
 const router = createRouter({
   history: createWebHistory(),
@@ -30,7 +42,22 @@ const router = createRouter({
 });
 
 const naive = create({
-  components: [NButton, darkTheme, lightTheme, NSwitch, NConfigProvider],
+  components: [
+    NButton,
+    darkTheme,
+    lightTheme,
+    NSwitch,
+    NConfigProvider,
+    NThemeEditor,
+    NH1,
+    NH2,
+    NH3,
+    NH4,
+    NH5,
+    NH6,
+    NP,
+    NIcon,
+  ],
 });
 
 const themeState = reactive({

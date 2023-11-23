@@ -1,28 +1,37 @@
 <template>
   <div id="app">
-    <n-switch v-model:value="isDark" />
-    <n-config-provider
-      :theme="theme"
-      :theme-overrides="
-        theme === 'dark' ? darkThemeOverrides : lightThemeOverrides
-      "
-    >
-    </n-config-provider>
-    <router-view />
+    <n-switch v-model:value="isDark" size="large">
+      <template #checked-icon>
+        <n-icon :component="WbSunnyOutlined" />
+      </template>
+      <template #unchecked-icon>
+        <n-icon :component="ModeNightOutlined" />
+      </template>
+    </n-switch>
+    <n-card>
+      <n-config-provider
+        :theme="theme"
+        :theme-overrides="
+          theme === 'dark' ? darkThemeOverrides : lightThemeOverrides
+        "
+      >
+        <router-view />
+        <n-global-style />
+      </n-config-provider>
+    </n-card>
   </div>
 </template>
 
 <script>
 import { ref, computed } from "vue";
-import { NConfigProvider } from "naive-ui";
-
-import "./styles/reset.css";
-import "./styles/style.css";
+import { NConfigProvider, NGlobalStyle } from "naive-ui";
+import { ModeNightOutlined, WbSunnyOutlined } from "@vicons/material";
 
 export default {
   name: "App",
   components: {
     NConfigProvider,
+    NGlobalStyle,
   },
   setup() {
     const isDark = ref(true);
@@ -51,12 +60,15 @@ export default {
         infoColorSuppl: "#45B6FCFF",
         infoColorHover: "#45B6FCFF",
         infoColorPressed: "#007CFFFF",
+        fontFamily: "MTSWide-Bold",
+        fontFamilyMono: "MTSCompact-Regular",
+        bodyColor: "#fff",
       },
     };
 
     const darkThemeOverrides = {
       common: {
-        primaryColor: "#18a058",
+        primaryColor: "#000",
         successColor: "#26CD58FF",
         errorColor: "#EA1F49FF",
         errorColorHover: "#F55F7EFF",
@@ -73,6 +85,9 @@ export default {
         infoColorSuppl: "#45B6FCFF",
         infoColorHover: "#45B6FCFF",
         infoColorPressed: "#007CFFFF",
+        fontFamily: "MTSWide-Bold",
+        fontFamilyMono: "MTSCompact-Regular",
+        bodyColor: "#000",
       },
     };
 
@@ -81,6 +96,8 @@ export default {
       darkThemeOverrides,
       lightThemeOverrides,
       theme,
+      ModeNightOutlined,
+      WbSunnyOutlined,
     };
   },
 };

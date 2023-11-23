@@ -6,20 +6,11 @@ h5,
 h6 {
   font-family: "MTSCompact-Bold", sans-serif;
   font-weight: normal;
-  color: #000;
 }
 
 p {
   font-family: "MTSCompact-Regular", sans-serif;
-  font-weight: normal;
-  color: #333;
-}
-
-@font-face {
-  font-family: "MTSCompact-Black";
-  src: url("../assets/fonts/MTSCompact-Black.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
+  font-weight: 700;
 }
 
 @font-face {

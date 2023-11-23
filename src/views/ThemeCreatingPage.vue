@@ -2,6 +2,7 @@
   <div>
     <n-theme-editor>
       <h1>Theme Creating Page</h1>
+      body text
       <n-button type="primary">Primary</n-button>
       <n-button type="info">Primary</n-button>
       <n-button type="success">Primary</n-button>
@@ -17,20 +18,3 @@
     </n-theme-editor>
   </div>
 </template>
-
-<script>
-import { NThemeEditor, NH1, NH2, NH3, NH4, NH5, NH6, NP } from "naive-ui";
-
-export default {
-  components: {
-    NThemeEditor,
-    NH1,
-    NH2,
-    NH3,
-    NH4,
-    NH5,
-    NH6,
-    NP,
-  },
-};
-</script>
