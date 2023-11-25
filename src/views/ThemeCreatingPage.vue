@@ -15,6 +15,17 @@
       <n-h5>МТС</n-h5>
       <n-h6>МТС</n-h6>
       <n-p>МТС</n-p>
+      <tasks-table-component />
     </n-theme-editor>
   </div>
 </template>
+
+<script>
+import TasksTableComponent from "../components/TasksTableComponent.vue";
+
+export default {
+  components: {
+    TasksTableComponent,
+  },
+};
+</script>
