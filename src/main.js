@@ -19,7 +19,13 @@ import {
   NDivider,
   NPageHeader,
   NMenu,
+  NProgress,
+  NText,
+  NCalendar,
+  NCard,
+  NDataTable,
 } from "naive-ui";
+import { KinesisContainer, KinesisElement, KinesisAudio } from "vue-kinesis";
 
 import App from "./App.vue";
 import HomePage from "./views/HomePage.vue";
@@ -64,6 +70,14 @@ const naive = create({
     NDivider,
     NPageHeader,
     NMenu,
+    KinesisContainer,
+    KinesisElement,
+    KinesisAudio,
+    NProgress,
+    NText,
+    NCalendar,
+    NCard,
+    NDataTable,
   ],
 });
 

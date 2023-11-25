@@ -33,56 +33,128 @@
         </kinesis-container>
         <n-divider style="width: 30vw" />
       </div>
-      <div v-else style="display: flex; width: 100vw; justify-content: center">
+      <div
+        v-else
+        style="
+          display: flex;
+          width: 100vw;
+          align-items: center;
+          justify-content: center;
+          flex-direction: column;
+        "
+      >
         <NavBar></NavBar>
         <kinesis-container
-          style="display: flex; bottom: 10px; position: absolute"
+          style="
+            display: flex;
+            flex-direction: column;
+            bottom: 10px;
+            left: 10px;
+            position: fixed;
+          "
         >
-          <kinesis-element type="depth_inv" :strength="10">
-            <n-switch
-              v-model:value="isDark"
-              size="large"
-              style="margin-right: 10px"
-            >
-              <template #checked-icon>
-                <n-icon :component="WbSunnyOutlined" />
-              </template>
-              <template #unchecked-icon>
-                <n-icon :component="ModeNightOutlined" />
-              </template>
-            </n-switch>
-          </kinesis-element>
-          <kinesis-element type="depth_inv" :strength="10">
-            <n-button
-              round
-              type="primary"
-              size="small"
-              style="margin-right: 10px"
-              ><template #icon>
-                <n-icon><av-timer-outlined /></n-icon>
-              </template>
-              Помодоро
-            </n-button>
-          </kinesis-element>
-          <kinesis-element type="depth_inv" :strength="10">
-            <n-button
-              round
-              type="primary"
-              size="small"
-              style="margin-right: 10px"
-              ><template #icon>
-                <n-icon><tag-faces-outlined /></n-icon>
-              </template>
-              Получить совет
-            </n-button>
-          </kinesis-element>
-          <kinesis-element type="depth_inv" :strength="10">
-            <n-button round type="primary" size="small"
-              ><template #icon>
-                <n-icon><emergency-outlined /></n-icon>
-              </template>
-            </n-button>
-          </kinesis-element>
+          <kinesis-container
+            style="
+              display: flex;
+              flex-direction: column;
+              bottom: 10px;
+              left: 10px;
+              position: absolute;
+            "
+          >
+            <div style="display: flex; margin-bottom: 5px">
+              <kinesis-element type="depth_inv" :strength="10">
+                <n-button
+                  round
+                  type="info"
+                  size="small"
+                  style="margin-right: 10px"
+                  ><template #icon>
+                    <n-icon><mail-outline-round /></n-icon>
+                  </template>
+                  Почта
+                </n-button>
+              </kinesis-element>
+              <kinesis-element type="depth_inv" :strength="10">
+                <n-button
+                  round
+                  type="info"
+                  size="small"
+                  style="margin-right: 10px"
+                  ><template #icon>
+                    <n-icon><task-alt-round /></n-icon>
+                  </template>
+                  Задачи
+                </n-button>
+              </kinesis-element>
+            </div>
+            <div style="display: flex; margin-bottom: 5px">
+              <kinesis-element type="depth_inv" :strength="12">
+                <n-button
+                  round
+                  type="success"
+                  size="small"
+                  style="margin-right: 10px"
+                  ><template #icon>
+                    <n-icon><emergency-outlined /></n-icon>
+                  </template>
+                  Мед. помощь
+                </n-button>
+              </kinesis-element>
+              <kinesis-element type="depth_inv" :strength="12">
+                <n-button
+                  round
+                  type="success"
+                  size="small"
+                  style="margin-right: 10px"
+                  ><template #icon>
+                    <n-icon><time-to-leave-outlined /></n-icon>
+                  </template>
+                  Отпроситься
+                </n-button>
+              </kinesis-element>
+            </div>
+            <div style="display: flex">
+              <kinesis-element type="depth_inv" :strength="10">
+                <n-switch
+                  v-model:value="isDark"
+                  size="large"
+                  style="margin-right: 10px"
+                >
+                  <template #checked-icon>
+                    <n-icon :component="WbSunnyOutlined" />
+                  </template>
+                  <template #unchecked-icon>
+                    <n-icon :component="ModeNightOutlined" />
+                  </template>
+                </n-switch>
+              </kinesis-element>
+              <kinesis-element type="depth_inv" :strength="10">
+                <n-button
+                  round
+                  type="primary"
+                  size="small"
+                  style="margin-right: 10px"
+                  ><template #icon>
+                    <n-icon><av-timer-outlined /></n-icon>
+                  </template>
+                  Помодоро
+                </n-button>
+              </kinesis-element>
+              <kinesis-element type="depth_inv" :strength="10">
+                <n-button
+                  round
+                  type="primary"
+                  size="small"
+                  style="margin-right: 10px"
+                  ><template #icon>
+                    <n-icon><tag-faces-outlined /></n-icon>
+                  </template>
+                  Получить совет
+                </n-button>
+              </kinesis-element>
+            </div>
+          </kinesis-container>
         </kinesis-container>
         <router-view />
       </div>
@@ -100,6 +172,9 @@ import {
   AvTimerOutlined as AvTimerOutlined,
   TagFacesOutlined as TagFacesOutlined,
   EmergencyOutlined as EmergencyOutlined,
+  TimeToLeaveOutlined as TimeToLeaveOutlined,
+  MailOutlineRound as MailOutlineRound,
+  TaskAltRound as TaskAltRound,
 } from "@vicons/material";
 import { KinesisContainer, KinesisElement } from "vue-kinesis";
 import NavBar from "./components/NavBar.vue";
@@ -113,6 +188,9 @@ export default {
     AvTimerOutlined,
     TagFacesOutlined,
     EmergencyOutlined,
+    TimeToLeaveOutlined,
+    MailOutlineRound,
+    TaskAltRound,
     KinesisElement,
     NavBar,
   },
@@ -170,7 +248,7 @@ export default {
 
     const darkThemeOverrides = {
       common: {
-        baseColor: "#FFFFFFFF",
+        baseColor: "#000",
         warningColor: "#C68926BD",
         primaryColor: "#E30611BD",
         primaryColorHover: "#FF4851C4",
@@ -201,7 +279,11 @@ export default {
         fontFamily: "MTSWide-Bold",
         fontFamilyMono: "MTSCompact-Regular",
         bodyColor: "#000",
+        cardColor: "#000",
         dividerColor: "#fff",
+      },
+      DataTable: {
+        thColor: "#007CFFBD",
       },
     };
 
