@@ -1,13 +1,15 @@
 <template>
-  <kinesis-container>
-    <kinesis-element type="depth_inv" :strength="6">
-      <n-menu
-        v-model:value="activeKey"
-        mode="horizontal"
-        :options="menuOptions"
-      />
-    </kinesis-element>
-  </kinesis-container>
+  <div class="nav-bar">
+    <kinesis-container>
+      <kinesis-element type="depth_inv" :strength="6">
+        <n-menu
+          v-model:value="activeKey"
+          mode="horizontal"
+          :options="menuOptions"
+        />
+      </kinesis-element>
+    </kinesis-container>
+  </div>
 </template>
 
 <script>
@@ -73,3 +75,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style>
+.nav-bar {
+  margin-bottom: 2rem;
+}
+</style>
