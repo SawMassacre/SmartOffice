@@ -51,6 +51,7 @@
             bottom: 10px;
             left: 10px;
             position: fixed;
+            z-index: 100;
           "
         >
           <kinesis-container

@@ -34,7 +34,7 @@ const data = [
   },
   {
     key: 2,
-    taskName: "Настройка среды",
+    taskName: "Настройка",
     taskStatus: "Выполнено",
     taskDueDate: "2022-01-02",
   },
