@@ -14,7 +14,7 @@
             "
           />
         </kinesis-element>
-        <kinesis-element :strength="15" type="depth_inv" style="height: 9rem">
+        <kinesis-element :strength="15" type="depth" style="height: 9rem">
           <n-p>Новости 25.11</n-p>
           <img
             :src="news"
@@ -38,7 +38,7 @@
             "
           />
         </kinesis-element>
-        <kinesis-element :strength="15" type="depth_inv" style="height: 9rem">
+        <kinesis-element :strength="15" type="depth" style="height: 9rem">
           <n-p>Митап Санкт-Петербург</n-p>
           <img
             :src="news3"

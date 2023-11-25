@@ -23,7 +23,7 @@
               >
             </div>
           </kinesis-element>
-          <kinesis-element :strength="20" type="depth_inv">
+          <kinesis-element :strength="40" type="depth" style="margin-top: 3rem">
             <img
               class="centered-logo"
               :src="require('./assets/smartofficelogo.svg')"
@@ -31,7 +31,6 @@
             />
           </kinesis-element>
         </kinesis-container>
-        <n-divider style="width: 30vw" />
       </div>
       <div
         v-else
@@ -43,6 +42,17 @@
           flex-direction: column;
         "
       >
+        <img
+          src="./assets/smartofficelogo.svg"
+          style="
+            height: 3.5rem;
+            position: fixed;
+            right: 0;
+            top: 0;
+            margin: 0.8rem;
+            z-index: 100;
+          "
+        />
         <NavBar></NavBar>
         <kinesis-container
           style="
@@ -203,7 +213,7 @@ export default {
     onMounted(() => {
       setTimeout(() => {
         isLoading.value = false;
-      }, 200);
+      }, 3000);
     });
 
     /**
